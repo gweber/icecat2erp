@@ -1,0 +1,19 @@
+Hy there
+
+this is a little project to integrate product data from icecat.biz to an ERP system at work. icecat offers a high quality on article description with features, offered via xml-files.
+
+first step is to rebuild the product index with mysql, work on mongoDB is halfway done. couchDB, which sounds really good for it's mvcc system, but is not that stable on inserts and requests as i hoped.
+
+based on this work, the local pricelists will be calculated and be exported do some webshops, enriched with the icecat data.
+
+many thanks from this for your great work @icecat.
+
+i used (and modfied slightly) the offered schema from the documentation.
+
+for no internal use, i use the user_id as a state-field
+
+* 1 	product is imported by any script
+* 2	error on file-fetch, to not penetrate their xml-server
+* 5	products which need to be reloaded, based on the daily-script
+* 10	file is fetched and in local store
+* 20	file is parsed
